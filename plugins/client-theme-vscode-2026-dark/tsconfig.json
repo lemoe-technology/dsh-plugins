@@ -1,0 +1,24 @@
+{
+  "include": [
+    "src",
+    "*.config.ts"
+  ],
+  "compilerOptions": {
+    "module": "nodenext",
+    "allowImportingTsExtensions": true,
+
+    "declaration": true,
+    "noEmit": true,
+
+    "erasableSyntaxOnly": true,
+    "isolatedDeclarations": true,
+    "verbatimModuleSyntax": true,
+
+    "target": "esnext",
+
+    "skipLibCheck": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true
+  }
+}

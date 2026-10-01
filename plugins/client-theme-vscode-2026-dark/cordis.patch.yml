@@ -1,0 +1,3 @@
+- insert:
+    - id: client-theme-vscode-2026-dark
+      name: '@lemoe-internal/dsh-client-theme-vscode-2026-dark'

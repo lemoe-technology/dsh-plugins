@@ -179,6 +179,9 @@ catalogs:
     '@deepseek-ai/dsh-client-ui-slots':
       specifier: ^0.2.0-rc.2
       version: 0.2.0-rc.2
+    '@deepseek-ai/dsh-client-ui-theme':
+      specifier: ^0.2.0-rc.2
+      version: 0.2.0-rc.2
     '@lemoe-technology/eslint-config':
       specifier: ^1.1.0
       version: 1.1.0
@@ -229,6 +232,24 @@ importers:
       simple-git-hooks:
         specifier: ^2.14.0
         version: 2.14.0
+
+  plugins/client-theme-vscode-2026-dark:
+    devDependencies:
+      '@deepseek-ai/cordis':
+        specifier: 'catalog:'
+        version: 4.0.4
+      '@deepseek-ai/dsh-client-modules':
+        specifier: 'catalog:'
+        version: 0.2.0-rc.2(@deepseek-ai/cordis@4.0.4)
+      '@deepseek-ai/dsh-client-ui-theme':
+        specifier: 'catalog:'
+        version: 0.2.0-rc.2(@deepseek-ai/cordis@4.0.4)
+      tsdown:
+        specifier: 'catalog:'
+        version: 0.22.14(typescript@6.0.3)
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
 
   plugins/client-ui-brand:
     devDependencies:
@@ -319,6 +340,14 @@ packages:
     resolution: {integrity: sha512-zfILCyG3ijHT7S8+WDXFz4RMxBJtG9A3ngtDBnqcLbD5wzKz8H7E+HC657USa6RgG13C2RGSs73sfKcSs4WtWQ==}
     peerDependencies:
       '@deepseek-ai/cordis': ~4.0.4
+
+  '@deepseek-ai/dsh-client-ui-theme@0.2.0-rc.2':
+    resolution: {integrity: sha512-1pdHD6QfRGalG3BchmvvuVZportaMcSGQ1lwjFlddB2oyZrHk4lsYMYN8l1icQDgB7VrA4cA1VIlYlUfl7qbLw==}
+    peerDependencies:
+      '@deepseek-ai/cordis': ~4.0.4
+
+  '@deepseek-ai/schemastery@3.18.4':
+    resolution: {integrity: sha512-SSXO6tYuyrIqKVbmOnIq0s+riUywYzouFMcnBluHF9n4KMo2G8HvEzhCYj6pj2617/glOjbJuVInJ9hfONsjkg==}
 
   '@dprint/formatter@0.5.1':
     resolution: {integrity: sha512-cdZUrm0iv/FnnY3CKE2dEcVhNEzrC551aE2h2mTFwQCRBrqyARLDnb7D+3PlXTUVp3s34ftlnGOVCmhLT9DeKA==}
@@ -1817,6 +1846,16 @@ snapshots:
   '@deepseek-ai/dsh-client-ui-slots@0.2.0-rc.2(@deepseek-ai/cordis@4.0.4)':
     dependencies:
       '@deepseek-ai/cordis': 4.0.4
+
+  '@deepseek-ai/dsh-client-ui-theme@0.2.0-rc.2(@deepseek-ai/cordis@4.0.4)':
+    dependencies:
+      '@deepseek-ai/cordis': 4.0.4
+      '@deepseek-ai/schemastery': 3.18.4
+
+  '@deepseek-ai/schemastery@3.18.4':
+    dependencies:
+      '@deepseek-ai/cosmokit': 1.8.5
+      '@standard-schema/spec': 1.1.0
 
   '@dprint/formatter@0.5.1': {}
 
