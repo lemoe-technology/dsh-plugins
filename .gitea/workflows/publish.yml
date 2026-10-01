@@ -1,0 +1,49 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '**@*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        uses: pnpm/setup@v3
+        with:
+          runtime: node
+          cache: false
+          require-lockfile: true
+
+      - name: Resolve package
+        env:
+          TAG: ${{ github.ref_name }}
+        run: echo "PACKAGE=${TAG%@*}" >> "$GITHUB_ENV"
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build
+        run: pnpm --filter "$PACKAGE" build
+
+      - name: Registry auth
+        env:
+          NPM_REGISTRY_URL: ${{ vars.NPM_REGISTRY_URL }}
+          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
+        run: |
+          {
+            echo "@lemoe-internal:registry=$NPM_REGISTRY_URL"
+            echo "//${NPM_REGISTRY_URL#*://}:_authToken=$NPM_REGISTRY_TOKEN"
+          } >> .npmrc
+
+      - name: Publish
+        run: pnpm --filter "$PACKAGE" publish --no-git-checks

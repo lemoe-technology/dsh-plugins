@@ -1,0 +1,44 @@
+{
+  "name": "@lemoe-technology/dsh-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lemoe Technology's deepseek harness plugins",
+  "homepage": "https://github.com/lemoe-technology/dsh-plugins",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemoe-technology/dsh-plugins.git"
+  },
+  "license": "MIT",
+  "author": "Lemoe",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "simple-git-hooks",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "pre-push": "pnpm -r typecheck && pnpm lint && pnpm -r build"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-client-modules": "catalog:",
+    "@deepseek-ai/dsh-client-ui-renderer": "catalog:",
+    "@deepseek-ai/dsh-client-ui-sidebar": "catalog:",
+    "@deepseek-ai/dsh-client-ui-slots": "catalog:",
+    "@lemoe-technology/eslint-config": "catalog:",
+    "@stylistic/eslint-plugin": "catalog:",
+    "eslint": "catalog:",
+    "lint-staged": "^17.6.0",
+    "simple-git-hooks": "^2.14.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.6.0",
+      "onFail": "download"
+    }
+  }
+}

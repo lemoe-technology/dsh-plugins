@@ -1,0 +1,3 @@
+- insert:
+    - id: client-ui-brand
+      name: '@lemoe-internal/dsh-client-ui-brand'
