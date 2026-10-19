@@ -10,11 +10,7 @@ declare global {
   }
 }
 
-const TYPOGRAPHY_CSS = `
-:root {
-  --ds-font-family-code: 'JetBrains Mono';
-  --dsw-font-family: 'JetBrains Mono', 'MiSans';
-}
+const SELECTION_CSS = `
 ::selection {
   background: var(--dsw-alias-bg-document-selection);
 }
@@ -28,16 +24,27 @@ window.__ModuleLoader__.load({
       apply(ctx: Context) {
         ctx.effect(() => ctx.theme.register(definition), 'vscode-2026-dark: theme registration');
         ctx.theme.setTheme(definition.id);
+
+        // temporary override until the official theme switcher release.
+        const overrides = Object.fromEntries(
+          Object.entries(definition.tokens)
+            .map(([name, value]) => [name, { light: value, dark: value }]),
+        );
+        ctx.effect(
+          () => ctx.theme.overrideTokens('vscode-2026-dark', overrides),
+          'vscode-2026-dark: token override layer',
+        );
+
         ctx.effect(() => {
           const tag = document.createElement('style');
           tag.dataset.plugin = '@lemoe-internal/dsh-client-theme-vscode-2026-dark';
-          tag.textContent = TYPOGRAPHY_CSS;
+          tag.textContent = SELECTION_CSS;
           document.head.append(tag);
 
           return () => {
             tag.remove();
           };
-        }, 'vscode-2026-dark: typography');
+        }, 'vscode-2026-dark: selection');
       },
     };
   },
