@@ -1,0 +1,3 @@
+- insert:
+    - id: client-ui-commands
+      name: '@lemoe-internal/dsh-client-ui-commands'

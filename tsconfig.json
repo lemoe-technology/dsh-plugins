@@ -1,0 +1,28 @@
+{
+  "include": [
+    "tsdown.client.ts"
+  ],
+  "compilerOptions": {
+    "module": "nodenext",
+    "allowImportingTsExtensions": true,
+
+    "declaration": true,
+    "noEmit": true,
+
+    "erasableSyntaxOnly": true,
+    "isolatedDeclarations": true,
+    "verbatimModuleSyntax": true,
+
+    "target": "esnext",
+    "jsx": "react",
+    "types": [
+      "node"
+    ],
+
+    "skipLibCheck": true,
+
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true
+  }
+}

@@ -31,8 +31,10 @@
     "@lemoe-technology/eslint-config": "catalog:",
     "@stylistic/eslint-plugin": "catalog:",
     "eslint": "catalog:",
+    "lightningcss": "catalog:",
     "lint-staged": "^17.6.0",
-    "simple-git-hooks": "^2.14.0"
+    "simple-git-hooks": "^2.14.0",
+    "tsdown": "catalog:"
   },
   "devEngines": {
     "packageManager": {
