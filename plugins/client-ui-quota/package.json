@@ -1,0 +1,62 @@
+{
+  "name": "@lemoe-internal/dsh-client-ui-quota",
+  "version": "1.0.0",
+  "description": "Provider quota and balance panel",
+  "homepage": "https://github.com/lemoe-technology/dsh-plugins",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemoe-technology/dsh-plugins.git"
+  },
+  "license": "MIT",
+  "author": "Lemoe",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "assets/icon.png",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-credentials": "catalog:",
+    "@deepseek-ai/schemastery": "catalog:"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "catalog:",
+    "@deepseek-ai/dsh-client-connection": "catalog:",
+    "@deepseek-ai/dsh-client-locale": "catalog:",
+    "@deepseek-ai/dsh-client-modules": "catalog:",
+    "@deepseek-ai/dsh-client-ui-layout": "catalog:",
+    "@deepseek-ai/dsh-client-ui-primitives": "catalog:",
+    "@deepseek-ai/dsh-client-ui-renderer": "catalog:",
+    "@deepseek-ai/dsh-client-ui-sidebar": "catalog:",
+    "@deepseek-ai/dsh-client-ui-slots": "catalog:",
+    "@deepseek-ai/dsh-host-webserver": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "dayjs": "^1.11.23",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "icon": "./assets/icon.png",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}

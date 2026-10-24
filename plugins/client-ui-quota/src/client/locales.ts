@@ -1,0 +1,53 @@
+export const NS = 'quota';
+
+export const zh = {
+  'panel.label': '额度',
+  'page.title': '额度面板',
+  'page.refresh': '刷新',
+  'page.refreshing': '刷新中…',
+  'page.updated': '更新于 {time}',
+  'page.loadFailed': '请求失败',
+  'usage.numbers': '{used} / {total}',
+  'usage.percent': '{n}%',
+  'usage.resets': '重置于 {date}',
+  'usage.5-hour': '5 小时',
+  'usage.weekly': '每周',
+  'usage.monthly': '每月',
+  'provider.deepseek': 'DeepSeek',
+  'provider.minimax-cn': 'MiniMax',
+  'provider.moonshotai-cn': 'Moonshot',
+  'provider.zai-coding-cn': 'Zhipu',
+  'time.now': '刚刚',
+  'time.minutes': '{n} 分钟前',
+  'time.hours': '{n} 小时前',
+  'time.days': '{n} 天前',
+  'time.months': '{n} 个月前',
+  'time.years': '{n} 年前',
+};
+
+export type QuotaKey = keyof typeof zh;
+
+export const en: Record<QuotaKey, string> = {
+  'panel.label': 'Quota',
+  'page.title': 'Quota panel',
+  'page.refresh': 'Refresh',
+  'page.refreshing': 'Refreshing…',
+  'page.updated': 'Updated {time}',
+  'page.loadFailed': 'Request failed',
+  'usage.numbers': '{used} / {total}',
+  'usage.percent': '{n}%',
+  'usage.resets': 'Resets {date}',
+  'usage.5-hour': '5 hours',
+  'usage.weekly': 'Weekly',
+  'usage.monthly': 'Monthly',
+  'provider.deepseek': 'DeepSeek',
+  'provider.minimax-cn': 'MiniMax',
+  'provider.moonshotai-cn': 'Moonshot',
+  'provider.zai-coding-cn': 'Zhipu',
+  'time.now': 'just now',
+  'time.minutes': '{n} min ago',
+  'time.hours': '{n} h ago',
+  'time.days': '{n} d ago',
+  'time.months': '{n} mo ago',
+  'time.years': '{n} y ago',
+};

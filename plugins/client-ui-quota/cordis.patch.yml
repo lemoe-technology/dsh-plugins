@@ -1,0 +1,3 @@
+- insert:
+    - id: client-ui-quota
+      name: '@lemoe-internal/dsh-client-ui-quota'

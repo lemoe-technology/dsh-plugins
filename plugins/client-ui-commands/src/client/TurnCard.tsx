@@ -20,16 +20,16 @@ const EMBEDDED_LANGUAGES: readonly string[] = [
 
 export type ReactModule = typeof ReactNamespace;
 
-export interface TurnCardHooks {
+export interface TurnCardDeps {
   useCodeHighlighter: (language: string | undefined) => CodeHighlighter;
   HoverCard: typeof HoverCardComponent;
 }
 
-export function createTurnCard(React: ReactModule, hooks: TurnCardHooks): {
+export function createTurnCard(React: ReactModule, deps: TurnCardDeps): {
   CommandsTurnCard: (props: PropsRuntime<'conversation.chat.turnTail'> & PropsLocale<typeof NS>) => ReactNamespace.ReactElement | null;
 } {
   const { Fragment, useMemo, useRef, useState } = React;
-  const { useCodeHighlighter, HoverCard } = hooks;
+  const { useCodeHighlighter, HoverCard } = deps;
 
   function CommandsTurnCard(props: PropsRuntime<'conversation.chat.turnTail'> & PropsLocale<typeof NS>): ReactNamespace.ReactElement | null {
     const commands = props.turn.data.get('commands')?.commands ?? [];
