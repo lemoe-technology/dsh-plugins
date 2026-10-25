@@ -1,6 +1,6 @@
 {
   "name": "@lemoe-internal/dsh-client-ui-commands",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Command summary card",
   "homepage": "https://github.com/lemoe-technology/dsh-plugins",
   "repository": {
