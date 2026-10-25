@@ -47,23 +47,6 @@
   white-space: nowrap;
 }
 
-.meta {
-  flex: none;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 20px;
-  color: var(--dsw-alias-label-tertiary);
-}
-
-.meta::before {
-  content: '·';
-  margin-right: 8px;
-}
-
-.meta[data-kind='failed'] {
-  color: var(--dsw-alias-state-error-primary);
-}
-
 .chevron {
   flex: none;
   margin-left: auto;
@@ -95,7 +78,10 @@
 .line {
   display: flex;
   align-items: baseline;
-  min-height: 24px;
+}
+
+.lines > * + * {
+  margin-top: 4px;
 }
 
 .prompt {
@@ -126,6 +112,35 @@
 
 .line[data-level='2'] .command {
   padding-left: 48px;
+}
+
+.line[data-severity='side-effect'],
+.line[data-severity='high'] {
+  position: relative;
+}
+
+.line[data-severity='side-effect']::before,
+.line[data-severity='high']::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+}
+
+.line[data-severity='side-effect']::before {
+  background: var(--dsw-alias-state-warn-primary);
+}
+
+.line[data-severity='high']::before {
+  background: var(--dsw-alias-state-error-primary);
+}
+
+.reason {
+  padding-left: 12px;
+  color: var(--dsw-alias-label-tertiary);
+  user-select: none;
 }
 
 .row[data-failed] .prompt {

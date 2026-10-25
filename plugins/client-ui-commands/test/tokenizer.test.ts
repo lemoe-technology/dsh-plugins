@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import type { EmbeddedCode, Segment } from '../src/client/tokenizer.ts';
+import type { EmbeddedCode, Segment } from '../src/tokenizer.ts';
 
-import { tokenize } from '../src/client/tokenizer.ts';
+import { tokenize } from '../src/tokenizer.ts';
 
 const texts = (line: string): string[] => tokenize(line)
   .map((seg) => seg.text);

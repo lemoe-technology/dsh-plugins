@@ -1,6 +1,8 @@
 
 import type { ConversationNodeDefinition } from '@deepseek-ai/dsh-client-ui-conversation/client';
 
+import { commandOf, isRecord } from '../records.ts';
+
 declare module '@deepseek-ai/dsh-client-ui-conversation/client' {
   interface ConversationTurnDataMap {
     commands: CommandsTurnData;
@@ -24,27 +26,6 @@ interface CommandsState extends CommandsTurnData {
 
 const SIGNAL_MARKER = /\n\[killed by signal: [^\]\n]+\]$/u;
 const EXIT_MARKER = /\n\[exit code: (-?\d+|null)\]$/u;
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value);
-}
-
-function commandOf(raw: string): string | null {
-  let args: unknown;
-
-  try {
-    args = JSON.parse(raw);
-  }
-  catch {
-    return null;
-  }
-
-  if (!isRecord(args) || typeof args.command !== 'string' || args.command.length === 0) {
-    return null;
-  }
-
-  return args.command;
-}
 
 function resultTextOf(message: { readonly content: readonly unknown[] }): string | null {
   const first = message.content[0];

@@ -30,6 +30,7 @@
   "devDependencies": {
     "@deepseek-ai/cordis": "catalog:",
     "@deepseek-ai/dsh-api-session-controller": "catalog:",
+    "@deepseek-ai/dsh-client-connection": "catalog:",
     "@deepseek-ai/dsh-client-locale": "catalog:",
     "@deepseek-ai/dsh-client-modules": "catalog:",
     "@deepseek-ai/dsh-client-ui-chat": "catalog:",
@@ -37,13 +38,19 @@
     "@deepseek-ai/dsh-client-ui-primitives": "catalog:",
     "@deepseek-ai/dsh-client-ui-renderer": "catalog:",
     "@deepseek-ai/dsh-client-ui-slots": "catalog:",
+    "@deepseek-ai/dsh-host-webserver": "catalog:",
+    "@deepseek-ai/dsh-llm": "catalog:",
+    "@deepseek-ai/dsh-session": "catalog:",
+    "@deepseek-ai/dsh-storage-domain": "catalog:",
     "@deepseek-ai/dsh-util-code-language": "catalog:",
+    "@deepseek-ai/schemastery": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "unbash": "6.0.1",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "zod": "4.4.3"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "*"
